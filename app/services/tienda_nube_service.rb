@@ -1,3 +1,6 @@
+require 'net/http'
+require 'timeout'
+
 class TiendaNubeService
   BASE_URL = 'https://api.tiendanube.com/v1'
   
