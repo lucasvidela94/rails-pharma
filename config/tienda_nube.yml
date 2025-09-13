@@ -1,0 +1,7 @@
+development:
+  store_id: "123456"
+  access_token: "fake_access_token_for_development"
+
+production:
+  store_id: "TU_STORE_ID_AQUI"
+  access_token: "TU_ACCESS_TOKEN_AQUI"

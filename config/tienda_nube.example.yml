@@ -1,0 +1,33 @@
+# Configuración de Tienda Nube
+# Copia este archivo a tienda_nube.yml y configura tus credenciales
+
+development:
+  store_id: "TU_STORE_ID_AQUI"
+  access_token: "TU_ACCESS_TOKEN_AQUI"
+  # Para desarrollo, usar credenciales de prueba o sandbox
+
+production:
+  store_id: "TU_STORE_ID_AQUI"
+  access_token: "TU_ACCESS_TOKEN_AQUI"
+
+# Para obtener estas credenciales:
+# 1. Ir a https://partners.tiendanube.com
+# 2. Crear una nueva aplicación
+# 3. Instalar la app en una tienda demo
+# 4. Obtener el access_token via OAuth 2
+#
+# Proceso OAuth 2:
+# 1. Redirect al usuario a: https://www.tiendanube.com/apps/{app_id}/authorize
+# 2. Usuario autoriza y recibe code
+# 3. Intercambiar code por token:
+#    POST https://www.tiendanube.com/apps/authorize/token
+#    {
+#      "client_id": "app_id",
+#      "client_secret": "client_secret", 
+#      "code": "authorization_code"
+#    }
+#
+# Permisos necesarios:
+# - read_orders (mínimo)
+# - read_products (opcional)
+# - read_customers (opcional)

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - RAILS_ENV=development
+      - SECRET_KEY_BASE=560e1b91e6115e5752cc2dc00570bdc41ace1f5b3f11cb9ea1c32ce9ac959e1f177730f6de4eab6d6a328881f8109d3acd05c122f79157399c47f4b5210b7a3b
+    volumes:
+      - ./storage:/rails/storage
+      - ./log:/rails/log
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=pharma_rails_development
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
