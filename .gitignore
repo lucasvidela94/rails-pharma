@@ -30,3 +30,19 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore vendor directory (bundler dependencies)
+/vendor/
+
+# Ignore node_modules if any
+/node_modules/
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
