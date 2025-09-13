@@ -101,7 +101,7 @@ class TiendaNubeService
     end
   rescue JSON::ParserError => e
     raise APIError, "Invalid JSON response from Tienda Nube API: #{e.message}"
-  rescue Net::TimeoutError => e
+  rescue Timeout::Error => e
     raise TimeoutError, "Timeout connecting to Tienda Nube API: #{e.message}"
   rescue => e
     raise APIError, "Unexpected error calling Tienda Nube API: #{e.message}"
